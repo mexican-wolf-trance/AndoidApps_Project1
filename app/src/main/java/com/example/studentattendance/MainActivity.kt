@@ -17,8 +17,22 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
         val info_sec = findViewById<View>(R.id.info_sec)
+        val andy_apps = findViewById<View>(R.id.andy_apps)
+        val intro = findViewById<View>(R.id.intro_soft)
 
         info_sec.setOnClickListener()
+        {
+            val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+            startActivity(intent)
+        }
+
+        andy_apps.setOnClickListener()
+        {
+            val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+            startActivity(intent)
+        }
+        
+        intro.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
             startActivity(intent)
