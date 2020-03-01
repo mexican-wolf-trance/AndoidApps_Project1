@@ -28,11 +28,11 @@ class AttendanceCalcKt() {
         this.unkPercent = unknown.toDouble() / total.toDouble()
     }
     fun getPercent(num: Int): Double {
-        when (num) {
-            1 -> { return this.attPercent }
-            2 -> { return this.absPercent }
-            3 -> { return this.unkPercent }
-            else -> { return 0.0}
+        return when (num) {
+            1 -> {this.attPercent}
+            2 -> {this.absPercent}
+            3 -> {this.unkPercent}
+            else -> {0.0}
         }
 
     }

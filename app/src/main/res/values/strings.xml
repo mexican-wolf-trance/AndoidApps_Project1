@@ -3,10 +3,13 @@
     <string name="aa_class_name">ANDROID APPS</string>
     <string name="aa_class_id">COMPSCI 4022</string>
     <string name="aa_class_instructor">DAVID VAUGHN</string>
+    <string name="aa_class_number">5</string>
     <string name="itts_class_name">INTRODUCTION TO THE SOFTWARE PROFESSION</string>
-    <string name="itts_class_id">CMOP SCI 4500</string>
-    <string name="itts_class_instructo">KEITH MILLER</string>
+    <string name="itts_class_id">COMP SCI 4500</string>
+    <string name="itts_class_instructor">KEITH MILLER</string>
+    <string name="itts_class_number">5</string>
     <string name="ss_class_name">SOFTWARE SECURITY</string>
     <string name="ss_class_id">INFO SYS 3868</string>
     <string name="ss_class_instructor">ANSHUMAN SINGH</string>
+    <string name="ss_class_number">5</string>
 </resources>
