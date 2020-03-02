@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity()
         val andy_apps = findViewById<View>(R.id.andy_apps)
         val intro = findViewById<View>(R.id.intro_soft)
 
-        info_sec.setOnClickListener()
+        andy_apps.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
             intent.putExtra("button", 1)
             startActivity(intent)
         }
 
-        andy_apps.setOnClickListener()
+        info_sec.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
             intent.putExtra("button", 2)
