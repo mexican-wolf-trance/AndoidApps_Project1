@@ -23,28 +23,22 @@ class MainActivity : AppCompatActivity()
         info_sec.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+            intent.putExtra("button", 1)
             startActivity(intent)
         }
 
         andy_apps.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+            intent.putExtra("button", 2)
             startActivity(intent)
         }
-        
+
         intro.setOnClickListener()
         {
             val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+            intent.putExtra("button", 3)
             startActivity(intent)
         }
-
-//        val aaButton = findViewById<Button>(R.id.aa_class_button)
-//
-//        aaButton?.setOnClickListener()
-//        {
-//            Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
-//        }
-
-
     }
 }

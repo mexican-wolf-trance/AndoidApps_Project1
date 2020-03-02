@@ -1,29 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/course_layout"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="InvalidId">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CLASS DETAILS"
-        android:textSize="30dp"
-        />
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COURSE NUMBER:"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="53dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/class_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aa_class_id"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="87dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INSTRUCTOR:"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="163dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/class_instructor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/aa_class_instructor"
         android:textSize="35dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="197dp" />
 
-        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        />
+        android:text="NUMBER OF STUDENTS:"
+        android:textSize="25dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <TextView
+        android:id="@id/class_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aa_class_number"
+        android:textSize="35dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DAYS HELD:"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="391dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/class_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aa_class_days"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="425dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

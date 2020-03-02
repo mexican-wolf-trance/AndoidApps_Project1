@@ -14,7 +14,8 @@
         android:text="MENU"
         android:orientation="vertical"
         android:gravity="center"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        tools:ignore="MissingConstraints" />
 
 
     <Button
