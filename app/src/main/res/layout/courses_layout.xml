@@ -13,7 +13,7 @@
         android:text="CLASS DETAILS"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:textSize="25dp" />
+        android:textSize="25sp" />
 
 
     <TextView
@@ -21,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="COURSE NUMBER:"
-        android:textSize="25dp"
-        android:paddingTop="20dp"
+        android:textSize="25sp"
+        android:paddingTop="20sp"
         app:layout_constraintBottom_toTopOf="@+id/class_id"
         />
 
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/aa_class_id"
-        android:textSize="35dp" />
+        android:textSize="35sp" />
 
 
     <TextView
@@ -40,8 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="INSTRUCTOR:"
-        android:textSize="25dp"
-        android:paddingTop="20dp"
+        android:textSize="25sp"
+        android:paddingTop="20sp"
         app:layout_constraintBottom_toTopOf="@+id/class_instructor" />
 
 
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/aa_class_instructor"
-        android:textSize="35dp"
+        android:textSize="35sp"
          />
 
     <TextView
@@ -58,8 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NUMBER OF STUDENTS:"
-        android:textSize="25dp"
-        android:paddingTop="20dp"
+        android:textSize="25sp"
+        android:paddingTop="20sp"
         app:layout_constraintBottom_toTopOf="@+id/class_number"/>
 
     <TextView
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/aa_class_number"
-        android:textSize="35dp"
+        android:textSize="35sp"
         />
 
     <TextView
@@ -75,8 +75,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DAYS HELD:"
-        android:textSize="25dp"
-        android:paddingTop="20dp"
+        android:textSize="25sp"
+        android:paddingTop="20sp"
         app:layout_constraintBottom_toTopOf="@id/class_days"
          />
 
@@ -85,14 +85,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/aa_class_days"
-        android:textSize="35dp"
+        android:textSize="35sp"
         />
     <Button
         android:id="@+id/student_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="STUDENT LIST"
-        android:textSize="25dp"
-        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_marginTop="20sp"
         />
 </LinearLayout>
