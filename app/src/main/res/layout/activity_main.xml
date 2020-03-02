@@ -14,7 +14,7 @@
         android:text="CLASSES"
         android:orientation="vertical"
         android:gravity="center"
-        android:textSize="25dp"
+        android:textSize="25sp"
         tools:ignore="MissingConstraints" />
 
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="64dp"
         android:gravity="center"
         android:text="@string/ss_class_name"
-        android:textSize="35dp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/andy_apps"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -40,7 +40,7 @@
         android:layout_marginTop="176dp"
         android:gravity="center"
         android:text="@string/aa_class_name"
-        android:textSize="35dp"
+        android:textSize="35sp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -53,7 +53,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/itts_class_name"
-        android:textSize="35dp"
+        android:textSize="35sp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
