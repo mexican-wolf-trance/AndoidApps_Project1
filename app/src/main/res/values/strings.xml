@@ -19,5 +19,14 @@
     <string name="student_name3">Carol Danvers</string>
     <string name="student_name4">Jean Grey</string>
     <string name="student_name5">Zoe Saldana</string>
+    <string name="student_name6">Natasha Romanov</string>
+    <string name="student_name7">Lei Ling</string>
+    <string name="student_name8">Bruce Banner</string>
+    <string name="student_name9">Tony Stark</string>
+    <string name="student_name10">Clare Moore</string>
+    <string name="student_name11">Jessica Jones</string>
+    <string name="student_name12">Abigail Brand</string>
+
+
 
 </resources>

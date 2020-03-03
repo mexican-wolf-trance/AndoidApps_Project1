@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.courses_layout.*
 
@@ -13,8 +14,9 @@ class DetailsActivity: AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.courses_layout)
-
-        when (intent.getStringExtra("button"))
+        val button = intent.getStringExtra("button")
+        Toast.makeText(applicationContext, "NAMES $button", Toast.LENGTH_SHORT).show()
+        when (button)
         {
             "1" ->
             {
@@ -43,6 +45,17 @@ class DetailsActivity: AppCompatActivity()
 
         studentList.setOnClickListener()
         {
+            when (button)
+            {
+                "2" ->
+                {
+                    intent.putExtra("names", "2")
+                }
+                "3" ->
+                {
+                    intent.putExtra("names", "3")
+                }
+            }
             startActivity(intent)
         }
     }

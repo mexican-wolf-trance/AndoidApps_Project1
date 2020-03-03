@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.student_list.*
 
 class StudentList: AppCompatActivity()
 {
@@ -21,6 +22,29 @@ class StudentList: AppCompatActivity()
 
         if (!::model.isInitialized){model = AttendanceCalc()}
 
+        val names = intent.getStringExtra("names")
+        Toast.makeText(applicationContext, "NAMES $names", Toast.LENGTH_SHORT).show()
+
+        when (names)
+        {
+            "2" ->
+            {
+                sname1.setText(R.string.student_name6)
+                sname2.setText(R.string.student_name9)
+                sname3.setText(R.string.student_name12)
+                sname4.setText(R.string.student_name8)
+                sname5.setText(R.string.student_name7)
+            }
+            "3" ->
+            {
+                sname1.setText(R.string.student_name4)
+                sname2.setText(R.string.student_name2)
+                sname3.setText(R.string.student_name12)
+                sname4.setText(R.string.student_name10)
+                sname5.setText(R.string.student_name11)
+            }
+        }
+
         val studentList = findViewById<LinearLayout>(R.id.sl_layout) as LinearLayout
         val buttonPresent = Button(this)
         buttonPresent.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -29,6 +53,10 @@ class StudentList: AppCompatActivity()
         val buttonAbsent = Button(this)
         buttonAbsent.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         buttonAbsent.text = "ABSENT"
+
+        val buttonLate = Button(this)
+        buttonLate.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        buttonLate.text = "LATE"
 
         val buttonUnknown = Button(this)
         buttonUnknown.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -39,6 +67,7 @@ class StudentList: AppCompatActivity()
             studentList.removeView(buttonPresent)
             studentList.removeView(buttonAbsent)
             studentList.removeView(buttonUnknown)
+            studentList.removeView(buttonLate)
             this.buttonChecker = true
         }
 
@@ -62,6 +91,12 @@ class StudentList: AppCompatActivity()
             Toast.makeText(applicationContext, "UNKNOWN (counts as absent):" + model.getAbsent(), Toast.LENGTH_SHORT).show()
             destroyButton()
         }
+        buttonLate.setOnClickListener()
+        {
+            model.setLate(1)
+            Toast.makeText(applicationContext, "LATE: " + model.getAbsent(), Toast.LENGTH_SHORT).show()
+            destroyButton()
+        }
 
         fun createButton()
         {
@@ -70,6 +105,7 @@ class StudentList: AppCompatActivity()
                 studentList.addView(buttonPresent)
                 studentList.addView(buttonAbsent)
                 studentList.addView(buttonUnknown)
+                studentList.addView(buttonLate)
                 this.buttonChecker = false
             }
             else
