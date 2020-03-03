@@ -1,37 +1,59 @@
 package com.example.studentattendance
 
-class AttendanceCalcKt() {
+import android.widget.Toast
+import java.security.AccessController.getContext
+
+class AttendanceCalc()
+{
     private var attending: Int
     private var absent: Int
-    private var unknown: Int
     private val total: Int
     var attPercent: Double = 0.0
     var absPercent: Double = 0.0
-    var unkPercent: Double = 0.0
 
 
-    init {
+    init
+    {
         this.absent = 0
         this.attending = 0
-        this.unknown = 0
         this.total = 5
     }
 
-    fun setValues(x: Int, y: Int, z: Int)
+    fun setAttend(x: Int)
     {
-        this.attending = x
-        this.absent = y
-        this.unknown = z
-
-        this.attPercent = attending.toDouble() / total.toDouble()
-        this.absPercent = absent.toDouble() / total.toDouble()
-        this.unkPercent = unknown.toDouble() / total.toDouble()
+        if (this.attending + this.absent < this.total)
+            this.attending += x
     }
-    fun getPercent(num: Int): Double {
+    fun setAbsent(x: Int)
+    {
+        if (this.attending + this.absent < this.total)
+            this.absent += x
+    }
+    fun setUnknown(x: Int)
+    {
+        if (this.attending + this.absent < this.total)
+        this.absent += x
+    }
+    fun getAttend(): Int
+    {
+        return this.attending
+    }
+    fun getAbsent(): Int
+    {
+        return this.absent
+    }
+
+    fun setValues()
+    {
+        this.attPercent = (attending.toDouble() / total.toDouble()) * 100
+        this.absPercent = (absent.toDouble() / total.toDouble()) * 100
+    }
+
+    fun getPercent(num: Int): Double
+    {
         return when (num) {
             1 -> {this.attPercent}
             2 -> {this.absPercent}
-            3 -> {this.unkPercent}
             else -> {0.0}
         }
 
