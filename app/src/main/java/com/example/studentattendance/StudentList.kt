@@ -22,10 +22,7 @@ class StudentList: AppCompatActivity()
 
         if (!::model.isInitialized){model = AttendanceCalc()}
 
-        val names = intent.getStringExtra("names")
-        Toast.makeText(applicationContext, "NAMES $names", Toast.LENGTH_SHORT).show()
-
-        when (names)
+        when (intent.getStringExtra("names"))
         {
             "2" ->
             {
@@ -96,6 +93,15 @@ class StudentList: AppCompatActivity()
             model.setLate(1)
             Toast.makeText(applicationContext, "LATE: " + model.getAbsent(), Toast.LENGTH_SHORT).show()
             destroyButton()
+        }
+        resetButton.setOnClickListener()
+        {
+            model.reset()
+            Toast.makeText(applicationContext, "RESET", Toast.LENGTH_SHORT).show()
+        }
+        finish.setOnClickListener()
+        {
+            finish()
         }
 
         fun createButton()

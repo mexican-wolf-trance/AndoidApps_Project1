@@ -3,19 +3,23 @@ package com.example.studentattendance
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.courses_layout.*
 
 class DetailsActivity: AppCompatActivity()
 {
+    private lateinit var model: AttendanceCalc
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.courses_layout)
         val button = intent.getStringExtra("button")
-        Toast.makeText(applicationContext, "NAMES $button", Toast.LENGTH_SHORT).show()
         when (button)
         {
             "1" ->
@@ -58,5 +62,26 @@ class DetailsActivity: AppCompatActivity()
             }
             startActivity(intent)
         }
+    }
+    override fun onResume()
+    {
+        super.onResume()
+        val attendanceResults = findViewById<LinearLayout>(R.id.courses) as LinearLayout
+
+        val additionText = TextView(this)
+        additionText.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        additionText.text = "IT WORKED"
+        additionText.id = R.id.additionText
+
+        attendanceResults.addView(additionText)
+    }
+    override fun onPause()
+    {
+        super.onPause()
+        val attendanceResults = findViewById<LinearLayout>(R.id.courses) as LinearLayout
+        val additionalText = findViewById<TextView>(R.id.additionText)
+
+        attendanceResults.removeView(additionalText)
+
     }
 }

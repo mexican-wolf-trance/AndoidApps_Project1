@@ -8,6 +8,13 @@
     android:orientation="vertical"
     android:id="@+id/sl_layout">
 
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:textSize="25sp"/>
+
     <TextView
         android:id="@+id/sname1"
         android:layout_width="match_parent"
@@ -48,5 +55,12 @@
         android:text="@string/student_name5"
         android:textSize="35sp"
         />
+
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FINISH"
+        android:textSize="25sp"/>
 
 </LinearLayout>

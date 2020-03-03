@@ -1,8 +1,5 @@
 package com.example.studentattendance
 
-import android.widget.Toast
-import java.security.AccessController.getContext
-
 class AttendanceCalc()
 {
     private var attending: Int
@@ -11,6 +8,7 @@ class AttendanceCalc()
     private val total: Int
     var attPercent: Double = 0.0
     var absPercent: Double = 0.0
+    var latePercent: Double = 0.0
 
 
     init
@@ -55,15 +53,25 @@ class AttendanceCalc()
     {
         this.attPercent = (attending.toDouble() / total.toDouble()) * 100
         this.absPercent = (absent.toDouble() / total.toDouble()) * 100
+        this.latePercent = (late.toDouble() / total.toDouble()) * 100
     }
 
     fun getPercent(num: Int): Double
     {
-        return when (num) {
+        return when (num)
+        {
             1 -> {this.attPercent}
             2 -> {this.absPercent}
             else -> {0.0}
         }
-
+    }
+    fun reset()
+    {
+        this.absent = 0
+        this.attending = 0
+        this.late = 0
+        this.attPercent = 0.0
+        this.absPercent = 0.0
+        this.latePercent = 0.0
     }
 }
