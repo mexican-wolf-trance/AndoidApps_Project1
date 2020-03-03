@@ -14,7 +14,7 @@ class AttendanceCalcKt() {
         this.absent = 0
         this.attending = 0
         this.unknown = 0
-        this.total = 20
+        this.total = 5
     }
 
     fun setValues(x: Int, y: Int, z: Int)
