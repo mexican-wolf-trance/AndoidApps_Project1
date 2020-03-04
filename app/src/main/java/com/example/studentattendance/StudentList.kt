@@ -1,5 +1,7 @@
 package com.example.studentattendance
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +13,7 @@ import kotlinx.android.synthetic.main.student_list.*
 
 class StudentList: AppCompatActivity()
 {
-    var buttonChecker = true
+    private var buttonChecker = true
 
     private lateinit var model: AttendanceCalc
 
@@ -91,7 +93,7 @@ class StudentList: AppCompatActivity()
         buttonLate.setOnClickListener()
         {
             model.setLate(1)
-            Toast.makeText(applicationContext, "LATE: " + model.getAbsent(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "LATE: " + model.getLate(), Toast.LENGTH_SHORT).show()
             destroyButton()
         }
         resetButton.setOnClickListener()
@@ -101,6 +103,12 @@ class StudentList: AppCompatActivity()
         }
         finish.setOnClickListener()
         {
+            model.setValues()
+            val attResult = model.getPercent(1)
+            val intent = Intent(this@StudentList, DetailsActivity::class.java)
+            Toast.makeText(applicationContext, "ATTENDANCE: " + model.getPercent(1), Toast.LENGTH_SHORT).show()
+            intent.putExtra("result", attResult)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
 
@@ -126,23 +134,53 @@ class StudentList: AppCompatActivity()
 
         student1.setOnClickListener()
         {
-            createButton()
+            if (model.s1button)
+            {
+                createButton()
+                model.s1button = false
+            }
+            else
+                Toast.makeText(applicationContext,"You've already selected this student", Toast.LENGTH_SHORT).show()
         }
         student2.setOnClickListener()
         {
-            createButton()
+            if (model.s2button)
+            {
+                createButton()
+                model.s2button = false
+            }
+            else
+                Toast.makeText(applicationContext,"You've already selected this student", Toast.LENGTH_SHORT).show()
         }
         student3.setOnClickListener()
         {
-            createButton()
+            if (model.s3button)
+            {
+                createButton()
+                model.s3button = false
+            }
+            else
+                Toast.makeText(applicationContext,"You've already selected this student", Toast.LENGTH_SHORT).show()
         }
         student4.setOnClickListener()
         {
-            createButton()
+            if (model.s4button)
+            {
+                createButton()
+                model.s4button = false
+            }
+            else
+                Toast.makeText(applicationContext,"You've already selected this student", Toast.LENGTH_SHORT).show()
         }
         student5.setOnClickListener()
         {
-            createButton()
+            if (model.s5button)
+            {
+                createButton()
+                model.s5button = false
+            }
+            else
+                Toast.makeText(applicationContext,"You've already selected this student", Toast.LENGTH_SHORT).show()
         }
 
 

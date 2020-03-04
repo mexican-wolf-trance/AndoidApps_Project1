@@ -10,6 +10,12 @@ class AttendanceCalc()
     var absPercent: Double = 0.0
     var latePercent: Double = 0.0
 
+    var s1button = true
+    var s2button = true
+    var s3button = true
+    var s4button = true
+    var s5button = true
+
 
     init
     {
@@ -33,7 +39,7 @@ class AttendanceCalc()
     fun setUnknown(x: Int)
     {
         if (this.attending + this.late + this.absent < this.total)
-        this.absent += x
+            this.absent += x
     }
     fun setLate(x: Int)
     {
@@ -47,6 +53,10 @@ class AttendanceCalc()
     fun getAbsent(): Int
     {
         return this.absent
+    }
+    fun getLate(): Int
+    {
+        return this.late
     }
 
     fun setValues()
@@ -73,5 +83,11 @@ class AttendanceCalc()
         this.attPercent = 0.0
         this.absPercent = 0.0
         this.latePercent = 0.0
+
+        this.s1button = true
+        this.s2button = true
+        this.s3button = true
+        this.s4button = true
+        this.s5button = true
     }
 }

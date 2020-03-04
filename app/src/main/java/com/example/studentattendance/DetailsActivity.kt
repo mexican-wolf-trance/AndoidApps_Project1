@@ -1,19 +1,17 @@
 package com.example.studentattendance
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.courses_layout.*
 
 class DetailsActivity: AppCompatActivity()
 {
-    private lateinit var model: AttendanceCalc
+    //private lateinit var model: AttendanceCalc
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -60,28 +58,28 @@ class DetailsActivity: AppCompatActivity()
                     intent.putExtra("names", "3")
                 }
             }
-            startActivity(intent)
+            startActivityForResult(intent, 10)
         }
     }
-    override fun onResume()
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
     {
-        super.onResume()
-        val attendanceResults = findViewById<LinearLayout>(R.id.courses) as LinearLayout
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode != Activity.RESULT_OK)
+        {
+            return
+        }
 
-        val additionText = TextView(this)
-        additionText.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        additionText.text = "IT WORKED"
-        additionText.id = R.id.additionText
-
-        attendanceResults.addView(additionText)
-    }
-    override fun onPause()
-    {
-        super.onPause()
-        val attendanceResults = findViewById<LinearLayout>(R.id.courses) as LinearLayout
-        val additionalText = findViewById<TextView>(R.id.additionText)
-
-        attendanceResults.removeView(additionalText)
-
+        when (requestCode)
+        {
+            10 ->
+            {
+                val results = findViewById<TextView>(R.id.results)
+                val atResults = data?.getDoubleExtra("result", 0.0)
+                Toast.makeText(applicationContext, "$atResults", Toast.LENGTH_SHORT).show()
+                if (atResults != null && atResults > 0)
+                    results.text = "$atResults %"
+            }
+        }
     }
 }
